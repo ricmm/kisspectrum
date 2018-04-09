@@ -1,6 +1,6 @@
 INCLUDEFLAGS=-I/opt/vc/include -I/opt/vc/include/interface/vmcs_host/linux -I/opt/vc/include/interface/vcos/pthreads -fPIC
 LIBFLAGS=-L/opt/vc/lib -lbrcmEGL -lbrcmGLESv2 -ljpeg
-FONTLIB=/usr/share/fonts/truetype/ttf-dejavu
+FONTLIB=/usr/share/fonts/ttf-dejavu
 FONTFILES=DejaVuSans.inc  DejaVuSansMono.inc DejaVuSerif.inc
 FFT_C = ./hello_fft/mailbox.c ./hello_fft/gpu_fft.c ./hello_fft/gpu_fft_base.c ./hello_fft/gpu_fft_twiddles.c ./hello_fft/gpu_fft_shaders.c
 all:	font2openvg fonts library kisspectrum	
@@ -36,7 +36,7 @@ library: oglinit.o libshapes.o
 	gcc $(LIBFLAGS) -shared -o libshapes.so oglinit.o libshapes.o 
 
 #INCLUDEFLAGS2=-O2 -lpthread -I/opt/vc/include 
-INCLUDEFLAGS2=-pg -O3 -lpthread -I/opt/vc/include -march=armv7-a -mfpu=neon-vfpv4 -mfloat-abi=hard -ffast-math
+INCLUDEFLAGS2=-O3 -lpthread -I/opt/vc/include -march=armv7-a -mfpu=neon-vfpv4 -mfloat-abi=hard -ffast-math
 LIBFLAGS2=-L/opt/vc/lib -lbrcmEGL -lbrcmGLESv2 -lbcm_host -lpthread  -ljpeg -lrt -lm -lliquid 
 
 kisspectrum: kisspectrum.c 
