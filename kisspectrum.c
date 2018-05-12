@@ -272,7 +272,7 @@ int main(int argc, char *argv[]) {
 
     Init();
 
-    int FFTSize = 1024;
+    int FFTSize = 400;
 
     float complex * iqin = (float complex*) malloc(FFTSize *sizeof(float complex));  
     float complex * fftout = (float complex*) malloc(FFTSize * sizeof(float complex));
